@@ -91,29 +91,29 @@
       pointer-events: none;
     }
 
-    /* Compact card — smooth gentle lift (no zoom on mobile) */
+    /* Compact card — pure vertical lift (NO scale, NO zoom feeling) */
     .content {
       position: relative;
       z-index: 10;
       text-align: center;
-      transition: transform 1.85s cubic-bezier(0.22, 1, 0.36, 1), 
-                  opacity 1.85s ease;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(14px);
+      transition: transform 2.1s cubic-bezier(0.22, 1, 0.36, 1), 
+                  opacity 2.1s ease;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(16px);
       border-radius: 16px;
-      padding: 12px 22px 14px;
+      padding: 12px 20px 14px;
       box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.85);
-      max-width: min(300px, 82vw);
+      max-width: 260px;
       margin: 0 auto;
       will-change: transform;
     }
 
     .content.bloomed {
-      transform: translateY(-138px) scale(0.93);
-      background: rgba(255, 255, 255, 0.78);
+      transform: translateY(-160px);
+      background: rgba(255, 255, 255, 0.82);
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      opacity: 0.88;
+      opacity: 0.9;
     }
 
     /* ANIMATED TITLE CONTAINER */
