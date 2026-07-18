@@ -91,256 +91,67 @@
       pointer-events: none;
     }
 
-    /* Compact card — VERY GENTLE lift only (no zoom at all) */
+    
+    }
+    
+
+    
+      
+    }
+    
+
+    
+      
+    }
+    
+
+    
+      
+    }
+    
+
+    
+      
+    }
+    
+
+    
+      
+    }
+    /* Beautiful compact card */
     .content {
       position: relative;
       z-index: 10;
       text-align: center;
-      transition: opacity 2.8s ease, transform 2.8s ease;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(18px);
+      transition: transform 1.7s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 1.7s ease;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
       border-radius: 18px;
-      padding: 14px 24px 16px;
-      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+      padding: 16px 26px 18px;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.9);
-      max-width: 180px;
+      max-width: 280px;
       margin: 0 auto;
-      will-change: transform; transform: translateZ(0);
-      transform: translateZ(0); /* force GPU */
+      will-change: transform;
     }
 
     .content.bloomed {
-      opacity: 0.12;
-      background: rgba(255, 255, 255, 0.6);
-      box-shadow: none;
-    }
-
-    /* ANIMATED TITLE CONTAINER */
-    .name-container {
-      display: inline-flex;
-      gap: clamp(6px, 2vw, 14px);
-      margin-bottom: 10px;
-      cursor: pointer;
-      position: relative;
-    }
-
-    /* Individual Letter Styling & Glow Animation */
-    .letter {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.4rem, 6.8vw, 4.8rem);
-      font-weight: 700;
-      color: #3b0764;
-      position: relative;
-      display: inline-block;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      letter-spacing: -0.5px;
-      animation: sequentialGlow 4.5s infinite;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .letter:nth-child(1) { animation-delay: 0.0s; }
-    .letter:nth-child(2) { animation-delay: 0.25s; }
-    .letter:nth-child(3) { animation-delay: 0.5s; }
-    .letter:nth-child(4) { animation-delay: 0.75s; }
-    .letter:nth-child(5) { animation-delay: 1.0s; }
-    .letter:nth-child(6) { animation-delay: 1.25s; }
-
-    @keyframes sequentialGlow {
-      0%, 40%, 100% {
-        color: rgba(59, 7, 100, 0.45);
-        text-shadow: 0 0 0 rgba(0,0,0,0);
-        transform: translateY(0) ;
-      }
-      10%, 25% {
-        color: #3b0764;
-        text-shadow: 
-          0 2px 8px rgba(255, 255, 255, 0.7),
-          0 0 15px rgba(244, 114, 182, 0.6),
-          0 0 30px rgba(192, 132, 252, 0.5);
-        transform: translateY(0) ;
-      }
-    }
-
-    .letter:hover, .letter.hovered {
-      color: #1e0340 !important;
-      transform: translateY(0)  !important;
-      text-shadow: 
-        0 3px 12px rgba(255,255,255,0.8),
-        0 0 25px rgba(244, 114, 182, 0.7),
-        0 0 45px rgba(192, 132, 252, 0.6) !important;
-      animation-play-state: paused;
-    }
-
-    /* Diamond Shimmer Effect Overlay */
-    .name-container::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.55),
-        transparent
-      );
-      transform: skewX(-25deg);
-      pointer-events: none;
-      animation: shimmerSweep 6s infinite 2s;
-    }
-
-    @keyframes shimmerSweep {
-      0% { left: -100%; }
-      35%, 100% { left: 200%; }
-    }
-
-    p {
-      font-family: 'Great Vibes', Georgia, cursive;
-      font-size: clamp(1.15rem, 3vw, 1.55rem);
-      color: #3b0764;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-      margin-bottom: 26px;
-      opacity: 1;
-      text-shadow: 0 1px 5px rgba(255,255,255,0.5);
-    }
-
-    /* Make button cuter */
-    .btn-minimal {
-      background: linear-gradient(135deg, #f9a8d4, #c4b5fd, #93c5fd);
-      color: #3b0764;
-      border: none;
-      padding: 10px 32px;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border-radius: 9999px;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      box-shadow: 0 6px 18px rgba(244, 114, 182, 0.3),
-                  0 2px 8px rgba(192, 132, 252, 0.2);
-      position: relative;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .btn-minimal:hover {
-      transform:  translateY(0);
-      box-shadow: 0 10px 22px rgba(244, 114, 182, 0.4);
-      background: linear-gradient(135deg, #f472b6, #a78bfa, #60a5fa);
-    }
-
-    .btn-minimal:active {
-      transform: ;
-    }
-
-    .btn-minimal.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(20px);
-    }
-
-    .btn-minimal.hidden {
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(20px);
-    }
-
-    .bloom-message {
-      position: fixed;
-      bottom: 4%;
-      left: 50%;
-      transform: translateX(-50%) translateY(12px);
-      z-index: 10;
-      color: #3b0764;
-      font-family: 'Great Vibes', Georgia, cursive;
-      font-size: clamp(0.95rem, 2.4vw, 1.25rem);
-      letter-spacing: 0.3px;
-      font-weight: 400;
-      opacity: 0;
-      transition: opacity 1.3s ease 0.6s, transform 1.3s ease 0.6s;
-      pointer-events: none;
-      text-align: center;
-      width: 84%;
-      text-shadow: 0 1px 4px rgba(255,255,255,0.6);
-    }
-
-    .bloom-message.active {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    .music-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(59, 7, 100, 0.2);
-      color: #3b0764;
-      padding: 9px 18px;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: none;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .music-btn.active {
-      display: flex;
-    }
-
-    .music-btn:hover {
-      background: rgba(255, 255, 255, 0.95);
-      transform: translateY(0);
-    }
-
-    @media (max-width: 180px; }
-      p { letter-spacing: 1.5px; }
-      .music-btn { bottom: 16px; right: 16px; padding: 6px 12px; font-size: 0.75rem; }
-    }
-  
-    @media (max-width: 180px;
-      }
-    }
-
-    @media (max-width: 180px; padding: 8px 12px; }
-      .content.bloomed { transform: translateY(0) !important; }
-    }
-
-    @media (max-width: 180px; }
-      .content.bloomed { transform: translateY(0) !important; }
-    }
-
-    @media (max-width: 180px; padding: 8px 14px; }
-      .content.bloomed { transform: translateY(0) !important; }
-    }
-
-    @media (max-width: 180px; padding: 6px 10px; }
-      .content.bloomed { transform: translateY(0) !important; }
-    }
-
-    @media (max-width: 180px; padding: 6px 10px; }
-      .content.bloomed { transform: translateY(0) !important; }
-    }
-
-    @media (max-width: 180px; padding: 5px 9px; }
-      .content.bloomed { transform: translateY(0px) !important; }
+      transform: translateY(-185px);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+      opacity: 0.9;
     }
 
     @media (max-width: 480px) {
-      .content { max-width: 150px; padding: 6px 10px; }
-      .content.bloomed { opacity: 0.08 !important; }
-    }
-</style>
+      .content {
+        max-width: 84vw;
+        padding: 14px 20px;
+      }
+      .content.bloomed {
+        transform: translateY(-155px);
+      }
+    }</style>
 </head>
 <body>
 
@@ -824,7 +635,7 @@
       const positions = [0.10, 0.20, 0.28, 0.38, 0.48, 0.58, 0.68, 0.78, 0.88];
       positions.forEach((posRatio, idx) => {
         const x = width * posRatio + (Math.random() - 0.5) * 55;
-        const targetY = height * (0.68 + Math.random() * 0.09);
+        const targetY = height * (0.55 + Math.random() * 0.17);
         const palette = flowerPalettes[idx % flowerPalettes.length];
         const delay = idx * 6 + Math.floor(Math.random() * 6);
         flowers.push(new Flower(x, targetY, palette, delay));
