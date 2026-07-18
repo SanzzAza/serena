@@ -75,7 +75,7 @@
         opacity: 0.6;
       }
       100% {
-        transform: translateY(-25px) rotate(520deg) ;
+        transform: translateY(-18px) rotate(520deg) ;
         opacity: 0;
       }
     }
@@ -96,21 +96,21 @@
       position: relative;
       z-index: 10;
       text-align: center;
-      transition: transform 5s cubic-bezier(0.21, 1, 0.32, 1), opacity 5s ease;
+      transition: transform 5.5s cubic-bezier(0.21, 1, 0.32, 1), opacity 5.5s ease;
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(18px);
       border-radius: 18px;
       padding: 14px 24px 16px;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.9);
-      max-width: 220px;
+      max-width: 180px;
       margin: 0 auto;
       will-change: transform; transform: translateZ(0);
       transform: translateZ(0); /* force GPU */
     }
 
     .content.bloomed {
-      transform: translateY(-25px) translateZ(0);
+      transform: translateY(-18px) translateZ(0);
       background: rgba(255, 255, 255, 0.88);
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
       opacity: 0.95;
@@ -158,13 +158,13 @@
           0 2px 8px rgba(255, 255, 255, 0.7),
           0 0 15px rgba(244, 114, 182, 0.6),
           0 0 30px rgba(192, 132, 252, 0.5);
-        transform: translateY(-25px) ;
+        transform: translateY(-18px) ;
       }
     }
 
     .letter:hover, .letter.hovered {
       color: #1e0340 !important;
-      transform: translateY(-25px)  !important;
+      transform: translateY(-18px)  !important;
       text-shadow: 
         0 3px 12px rgba(255,255,255,0.8),
         0 0 25px rgba(244, 114, 182, 0.7),
@@ -228,7 +228,7 @@
     }
 
     .btn-minimal:hover {
-      transform:  translateY(-25px);
+      transform:  translateY(-18px);
       box-shadow: 0 10px 22px rgba(244, 114, 182, 0.4);
       background: linear-gradient(135deg, #f472b6, #a78bfa, #60a5fa);
     }
@@ -301,25 +301,29 @@
 
     .music-btn:hover {
       background: rgba(255, 255, 255, 0.95);
-      transform: translateY(-25px);
+      transform: translateY(-18px);
     }
 
-    @media (max-width: 220px; }
+    @media (max-width: 180px; }
       p { letter-spacing: 1.5px; }
       .music-btn { bottom: 16px; right: 16px; padding: 6px 12px; font-size: 0.75rem; }
     }
   
-    @media (max-width: 220px;
+    @media (max-width: 180px;
       }
     }
 
-    @media (max-width: 220px; padding: 8px 12px; }
-      .content.bloomed { transform: translateY(-25px) !important; }
+    @media (max-width: 180px; padding: 8px 12px; }
+      .content.bloomed { transform: translateY(-18px) !important; }
+    }
+
+    @media (max-width: 180px; }
+      .content.bloomed { transform: translateY(-18px) !important; }
     }
 
     @media (max-width: 480px) {
-      .content { max-width: 180px; }
-      .content.bloomed { transform: translateY(-18px) !important; }
+      .content { max-width: 160px; padding: 8px 14px; }
+      .content.bloomed { transform: translateY(-12px) !important; }
     }
 </style>
 </head>
@@ -805,7 +809,7 @@
       const positions = [0.10, 0.20, 0.28, 0.38, 0.48, 0.58, 0.68, 0.78, 0.88];
       positions.forEach((posRatio, idx) => {
         const x = width * posRatio + (Math.random() - 0.5) * 55;
-        const targetY = height * (0.63 + Math.random() * 0.12);
+        const targetY = height * (0.64 + Math.random() * 0.11);
         const palette = flowerPalettes[idx % flowerPalettes.length];
         const delay = idx * 6 + Math.floor(Math.random() * 6);
         flowers.push(new Flower(x, targetY, palette, delay));
@@ -815,7 +819,7 @@
       setTimeout(() => {
         for (let i = 0; i < 11; i++) {
           const x = width * (0.08 + Math.random() * 0.84);
-          const y = height * (0.63 + Math.random() * 0.12);
+          const y = height * (0.64 + Math.random() * 0.11);
           const palette = flowerPalettes[Math.floor(Math.random() * flowerPalettes.length)];
           const f = new Flower(x, y, palette, Math.floor(Math.random() * 4));
           flowers.push(f);
