@@ -96,22 +96,21 @@
       position: relative;
       z-index: 10;
       text-align: center;
-      transition: transform 2.8s cubic-bezier(0.23, 1, 0.32, 1), 
-                  opacity 2.8s ease;
+      transition: transform 3.2s cubic-bezier(0.22, 1, 0.36, 1), opacity 3.2s ease;
       background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(18px);
       border-radius: 18px;
       padding: 14px 24px 16px;
       box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.9);
-      max-width: 260px;
+      max-width: 220px;
       margin: 0 auto;
-      will-change: transform;
+      will-change: transform; transform: translateZ(0);
       transform: translateZ(0); /* force GPU */
     }
 
     .content.bloomed {
-      transform: translateY(-95px) translateZ(0);
+      transform: translateY(-68px) translateZ(0);
       background: rgba(255, 255, 255, 0.88);
       box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
       opacity: 0.95;
