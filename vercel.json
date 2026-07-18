@@ -1,9 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "serena.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/serena.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/serena.html" }
   ]
 }
