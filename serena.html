@@ -793,7 +793,7 @@
       const positions = [0.10, 0.20, 0.28, 0.38, 0.48, 0.58, 0.68, 0.78, 0.88];
       positions.forEach((posRatio, idx) => {
         const x = width * posRatio + (Math.random() - 0.5) * 55;
-        const targetY = height * (0.42 + Math.random() * 0.22);
+        const targetY = height * (0.55 + Math.random() * 0.18);
         const palette = flowerPalettes[idx % flowerPalettes.length];
         const delay = idx * 6 + Math.floor(Math.random() * 6);
         flowers.push(new Flower(x, targetY, palette, delay));
