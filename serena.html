@@ -51,11 +51,12 @@
     .floating-item {
       position: absolute;
       font-size: clamp(16px, 2.8vw, 32px);
-      opacity: 0.7;
+      opacity: 0.78;
       animation: floatCute linear infinite;
       pointer-events: none;
       user-select: none;
       filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+      z-index: 1;
     }
 
     .floating-item.heart { color: #f9a8d4; }
@@ -65,113 +66,250 @@
 
     @keyframes floatCute {
       0% {
-        transform: translateY(120vh) rotate(0deg) ;
+        transform: translateY(120vh) rotate(0deg);
         opacity: 0;
       }
-      15% {
-        opacity: 0.75;
-      }
-      85% {
-        opacity: 0.6;
-      }
+      15% { opacity: 0.78; }
+      85% { opacity: 0.65; }
       100% {
-        transform: translateY(0) rotate(520deg) ;
+        transform: translateY(0) rotate(520deg);
         opacity: 0;
       }
     }
 
-    /* Fullscreen Canvas for Flowers */
+    /* Fullscreen Canvas for Flowers - DO NOT TOUCH */
     #flowerCanvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
+      z-index: 2;
       pointer-events: none;
     }
 
-    
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    
-
-    
-      
-    }
-    /* Beautiful compact card */
+    /* Beautiful compact elegant card - PERBAGUS */
     .content {
       position: relative;
-      z-index: 10;
+      z-index: 20;
       text-align: center;
-      transition: transform 1.7s cubic-bezier(0.16, 1, 0.3, 1), 
-                  opacity 1.7s ease;
+      transition: transform 1.75s cubic-bezier(0.16, 1, 0.3, 1), 
+                  opacity 1.75s cubic-bezier(0.16, 1, 0.3, 1);
       background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(16px);
-      border-radius: 18px;
-      padding: 16px 26px 18px;
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      max-width: 280px;
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 26px 30px 28px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12), 
+                  0 6px 16px rgba(251, 113, 133, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.92);
+      max-width: 278px;
       margin: 0 auto;
       will-change: transform;
     }
 
     .content.bloomed {
-      transform: translateY(-185px);
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
-      opacity: 0.9;
+      transform: translateY(-172px);
+      background: rgba(255, 255, 255, 0.84);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      opacity: 0.97;
     }
 
+    /* SERENA name styling - glow & elegant (PERBAGUS) */
+    .name-container {
+      display: flex;
+      justify-content: center;
+      gap: 0px;
+      margin-bottom: 2px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: 6.5px;
+    }
+
+    .letter {
+      font-size: 54px;
+      line-height: 0.95;
+      color: #4c1d95;
+      text-shadow: 
+        0 0 12px rgba(192, 132, 252, 0.65),
+        0 0 28px rgba(244, 114, 182, 0.32),
+        0 0 42px rgba(192, 132, 252, 0.18),
+        2px 4px 5px rgba(0, 0, 0, 0.13);
+      transition: transform 0.22s cubic-bezier(0.23, 1.0, 0.32, 1), 
+                  color 0.22s ease, 
+                  text-shadow 0.22s ease;
+      cursor: default;
+    }
+
+    .letter:hover {
+      transform: translateY(-5px) scale(1.09);
+      color: #c026d3;
+      text-shadow: 
+        0 0 18px rgba(192, 132, 252, 0.9),
+        0 0 38px rgba(244, 114, 182, 0.55),
+        0 0 55px rgba(192, 132, 252, 0.28);
+    }
+
+    /* Gentle pulse glow on name */
+    .name-container {
+      animation: nameGlow 4.2s ease-in-out infinite;
+    }
+
+    @keyframes nameGlow {
+      0%, 100% { filter: drop-shadow(0 0 3px rgba(192,132,252,0.2)); }
+      50% { filter: drop-shadow(0 0 9px rgba(192,132,252,0.45)); }
+    }
+
+    /* Main message text */
+    .content p {
+      font-size: 18px;
+      font-weight: 500;
+      color: #4c1d95;
+      margin: 5px 0 15px;
+      line-height: 1.38;
+      letter-spacing: 0.2px;
+    }
+
+    /* Cute minimal button - PERBAGUS */
+    .btn-minimal {
+      background: linear-gradient(145deg, #f472b6 0%, #c084fc 100%);
+      color: #fff;
+      border: none;
+      padding: 11px 28px;
+      border-radius: 999px;
+      font-size: 14.8px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(192, 132, 252, 0.4),
+                  0 3px 7px rgba(0,0,0,0.1);
+      transition: all 0.28s cubic-bezier(0.23, 1.0, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-minimal::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.55),
+        transparent
+      );
+      transform: skewX(-25deg);
+      animation: btnShimmer 3.5s infinite;
+    }
+
+    @keyframes btnShimmer {
+      0% { transform: translateX(-120%) skewX(-25deg); }
+      25% { transform: translateX(300%) skewX(-25deg); }
+      100% { transform: translateX(300%) skewX(-25deg); }
+    }
+
+    .btn-minimal:hover {
+      transform: translateY(-2.5px);
+      box-shadow: 0 12px 28px rgba(192, 132, 252, 0.55);
+      background: linear-gradient(145deg, #e11d48 0%, #a78bfa 100%);
+    }
+
+    .btn-minimal:active {
+      transform: translateY(1px) scale(0.985);
+    }
+
+    .btn-minimal.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.75) translateY(8px);
+      transition: all 0.4s ease;
+    }
+
+    /* Bloom message - elegant & cute, matches screenshot */
+    .bloom-message {
+      position: absolute;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, 0);
+      font-size: 15.8px;
+      color: #6b21a8;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 1.85s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 25;
+      white-space: nowrap;
+      text-shadow: 0 2px 4px rgba(255,255,255,0.7);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bloom-message.active {
+      opacity: 1;
+      transform: translate(-50%, -74px);
+    }
+
+    /* Music toggle button - clean */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(192,132,252,0.28);
+      border-radius: 9999px;
+      padding: 8px 17px;
+      font-size: 13.2px;
+      color: #4c1d95;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 5px 16px rgba(0,0,0,0.09);
+      cursor: pointer;
+      z-index: 30;
+      transition: all 0.22s ease;
+      font-weight: 500;
+    }
+
+    .music-btn:hover {
+      background: rgba(255,255,255,0.98);
+      transform: translateY(-1px);
+    }
+
+    .music-btn.active {
+      bottom: 24px;
+    }
+
+    /* Responsive for mobile */
     @media (max-width: 480px) {
       .content {
-        max-width: 84vw;
-        padding: 14px 20px;
+        max-width: 87vw;
+        padding: 20px 24px 24px;
       }
       .content.bloomed {
-        transform: translateY(-155px);
+        transform: translateY(-148px);
       }
-    }</style>
+      .letter {
+        font-size: 46px;
+      }
+      .content p {
+        font-size: 16.5px;
+      }
+      .bloom-message {
+        font-size: 14.6px;
+      }
+      .music-btn {
+        bottom: 14px;
+        right: 14px;
+        font-size: 12.5px;
+        padding: 7px 14px;
+      }
+    }  </style>
+</head>
 </head>
 <body>
 
