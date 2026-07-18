@@ -91,29 +91,29 @@
       pointer-events: none;
     }
 
-    /* Tiny minimal card — flowers are completely visible */
+    /* Compact card — smooth gentle lift (no zoom on mobile) */
     .content {
       position: relative;
       z-index: 10;
       text-align: center;
-      transition: transform 1.55s cubic-bezier(0.16, 1, 0.3, 1), 
-                  opacity 1.55s ease;
+      transition: transform 1.85s cubic-bezier(0.22, 1, 0.36, 1), 
+                  opacity 1.85s ease;
       background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      border-radius: 14px;
-      padding: 10px 18px 12px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(14px);
+      border-radius: 16px;
+      padding: 12px 22px 14px;
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.85);
-      max-width: min(340px, 90vw);
+      max-width: min(300px, 82vw);
       margin: 0 auto;
       will-change: transform;
     }
 
     .content.bloomed {
-      transform: translateY(-205px);
-      background: rgba(255, 255, 255, 0.82);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
-      opacity: 0.92;
+      transform: translateY(-138px) scale(0.93);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      opacity: 0.88;
     }
 
     /* ANIMATED TITLE CONTAINER */
